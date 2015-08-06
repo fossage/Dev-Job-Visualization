@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title>Job Visualization</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="{% static 'mapvisuals/css/style.css' %}"> 
+	<link rel="stylesheet" type="text/css" href="{% static 'mapvisuals/js/lib/leaflet-1.0.0-b1/leaflet.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mapvisuals/css/lib/materialize.min.css' %}">  
+	<link rel="stylesheet" href="{% static 'mapvisuals/js/lib/c3/c3.min.css' %}">
+	<script type="text/javascript" src="{% static 'mapvisuals/js/lib/jquery-1.9.1.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/lib/materialize.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/lib/d3/d3.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/lib/color-brewer.js' %}"></script>
+
+	<script type='text/javascript' src="{% static 'mapvisuals/js/lib/c3/c3.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'mapvisuals/js/lib/angular/angular.js' %}"></script>
+    <script type="text/javascript" src="{% static 'mapvisuals/js/lib/angular/angular-route.js' %}"></script>
+	
+	<script type="text/javascript" src="{% static 'mapvisuals/js/lib/leaflet-1.0.0-b1/leaflet-src.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/modules/angular-leaflet-directive.js' %}"></script>
+
+	<script type="text/javascript" src="{% static 'mapvisuals/js/modules/modules.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/factories/factories.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/controllers/mapController.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/controllers/salaryController.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/controllers/pieChartController.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/directives/directives.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/services/services.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/partialRoutes.js' %}"></script>
+
+	<style>
+
+		*{
+			font-family: sans-serif;
+		}
+
+		#map {
+		  width: 960px;
+		  height: 500px;
+		}
+
+		svg {
+		  position: relative;
+		}
+
+		.state:hover {
+		  fill-opacity: 0;
+		  transition: all 0.5s ease;
+		}
+
+		.container{
+			margin-top: 20px;
+		}
+
+		.point{
+			fill-opacity: .9;
+		}
+
+		.tooltip{
+			max-width: 100px;
+			font-size: 0.8em;
+			background-color: rgba(220, 220, 220, 0.9);
+			padding: 5px;
+			border-radius: 2px;
+		}
+	</style>
+</head>
+<body ng-app='app'>
+	<div class="container">
+		<div class="row">
+			<div class="col s12" id='nav'>
+				<h4>fiveEleven</h4>
+				<h6>Developer Job Visualizations</h6>
+				<div class="ribbon right black">
+				  <a href="https://github.com/fiveEleven/job-visualization" target='_blank'>Fork me on GitHub</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<div ng-view=""></div>		
+<div class="col s12" id='top_footer'>
+	<div class="container" style='margin-top:0px'>
+		<div class="row" style='margin-bottom:0px'>
+			<div class="section">
+				<a href='http://www.glassdoor.com/index.htm' style='vertical-align:middle'>Data from <img style='vertical-align:middle' src='http://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>
+			</div>
+		</div>
+		
+	</div>
+</div>
+<!-- <footer id='top_footer' class="page-footer">
+	<div id='bottom_footer' class="footer-copyright">
+		<div class="container">
+            <a href='http://www.glassdoor.com/index.htm'>Data from <img src='http://www.glassdoor.com/static/img/api/glassdoor_logo_80.png' title='Job Search' /></a>
+        </div>
+  	</div>
+</footer> -->
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+	<title>Project</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'mapvisuals/css/lib/bootstrap.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mapvisuals/css/lib/bootstrap-theme.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mapvisuals/css/lib/bootstrap-social.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'mapvisuals/css/lib/font-awesome.css' %}">
+	<link rel="stylesheet" href="{% static 'mapvisuals/css/style.css' %}"> 
+	<link rel="stylesheet" href="{% static 'mapvisualsjs/lib/leaflet-1.0.0-b1/leaflet.css' %}">  
+	
+	<script src="{% static 'mapvisuals/js/lib/jquery-1.9.1.js' %}"></script>
+    <script src="{% static 'mapvisuals/js/lib/jquery-ui.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/lib/bootstrap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/lib/d3/d3.js' %}"></script>
+
+	<!-- <script type="text/javascript" src="/socket.io/socket.io.js"></script> -->
+    <script type="text/javascript" src="{% static 'mapvisuals/js/lib/angular/angular.js' %}"></script>
+    <script type="text/javascript" src="{% static 'mapvisuals/js/lib/angular/angular-route.js' %}"></script>
+	
+	<script type="text/javascript" src="{% static 'mapvisuals/js/lib/leaflet-1.0.0-b1/leaflet-src.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/modules/angular-leaflet-directive.js' %}"></script>
+
+
+	<script type="text/javascript" src="{% static 'mapvisuals/js/lib/heatmap/heatmap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'mapvisuals/js/lib/heatmap/leaflet-heatmap.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/lib/Leaflet.D3SvgOverlay/L.D3SvgOverlay.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/modules/modules.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/factories/factories.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/controllers/controllers.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/directives/directives.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/services/services.js' %}"></script>
+	<script type="text/javascript" src="{% static 'mapvisuals/js/partialRoutes.js' %}"></script>
+	<style>
+		#map {
+		  width: 960px;
+		  height: 500px;
+		}
+
+		svg {
+		  position: relative;
+		}
+
+		path {
+		  fill: grey;
+		  fill-opacity: .2;
+		  stroke: #fff;
+		  stroke-width: 1.5px;
+		}
+
+		path:hover {
+		  fill: brown;
+		  fill-opacity: .7;
+		}
+
+		.container{
+			margin-top: 20px;
+		}
+
+		/*.point{
+			fill: orange;
+			fill-opacity: .7;
+		}*/
+
+	</style>
+</head>
+<body>
+ 	<div ng-app="app" class="container" ng-controller="MapController as main">
+ 		<leaflet event-broadcast="events" defaults="defaults" center="center" height="600px" width="1200px"></leaflet>
+    </div>
+</body>
+</html>
